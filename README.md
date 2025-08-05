@@ -1,98 +1,91 @@
-# 📦 Alibaba RFQ Scraper
+# 🛒 Alibaba RFQ Scraper (2025)
 
-This project is a Python-based web scraper that extracts Request For Quotation (RFQ) listings from [npino.com](https://npino.com), which hosts hidden data for Alibaba RFQs. The scraper uses **Selenium** and **BeautifulSoup** to automate browsing and extract data such as company name, contact info, location, and request details. All extracted data is saved into a clean and structured CSV file.
+This project is a Python-based web scraping tool designed to extract Request for Quotation (RFQ) data from the [Alibaba](https://www.alibaba.com/) platform. It automates the process of logging into an Alibaba buyer account, navigates through multiple pages of RFQs, and saves structured data into a clean and well-formatted CSV file.
 
 ---
 
-## 🚀 Features
+## 📌 Project Features
 
-- ✅ Scrapes multiple pages of RFQ listings automatically
-- ✅ Extracts key details like:
-  - Company Name
-  - Contact Info
-  - Description
-  - Location
-- ✅ Saves data in clean CSV format with a timestamped filename
-- ✅ Easy to configure and run
+* ✅ Logs into Alibaba using secure credentials
+* ✅ Navigates through multiple pages of RFQs
+* ✅ Extracts relevant data fields (Product Name, Quantity, Buyer Country, Date, etc.)
+* ✅ Saves scraped data in a **clean and formatted CSV file** matching the desired template
+* ✅ Built using `Selenium`, `BeautifulSoup`, and `Pandas`
 
 ---
 
 ## 🛠️ Tech Stack
 
-- Python 3.x
-- Selenium
-- BeautifulSoup (bs4)
-- Pandas
-- OpenPyXL (for Excel support)
+* **Language**: Python 3.x
+* **Libraries**:
+
+  * `Selenium` for browser automation
+  * `BeautifulSoup` for HTML parsing
+  * `Pandas` for data manipulation and saving to CSV
+  * `Time` and `OS` for utility and delay management
+
+---
+
+## 🧪 How to Use
+
+1. **Clone the Repository**
+
+   ```bash
+   git clone https://github.com/yourusername/alibaba-rfq-scraper.git
+   cd alibaba-rfq-scraper
+   ```
+
+2. **Install Requirements**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Update Credentials**
+
+   * Open `alibaba_scraper.py`
+   * Add your **Alibaba login email and password** in the script securely (or via environment variables).
+
+4. **Run the Scraper**
+
+   ```bash
+   python alibaba_scraper.py
+   ```
+
+5. **Output**
+
+   * The extracted data will be saved in a well-formatted CSV file named like:
+     `alibaba_rfq_YYYY-MM-DD_HHMMSS.csv`
 
 ---
 
 ## 📂 Project Structure
 
 ```
-
-alibaba-rfq-scraper/
-├── alibaba\_scraper.py        # Main scraping script
-├── requirements.txt          # Required Python packages
-├── output/                   # Folder where scraped CSVs will be saved
-├── sample\_output.csv         # Example output file
-└── README.md                 # Project documentation
-
-````
-
----
-
-## 🧪 Setup Instructions
-
-1. **Clone the repository**:
-```bash
-git clone https://github.com/your-username/alibaba-rfq-scraper.git
-cd alibaba-rfq-scraper
-````
-
-2. **Install the dependencies**:
-
-```bash
-pip install -r requirements.txt
+📁 alibaba-rfq-scraper/
+│
+├── alibaba_scraper.py        # Main scraping script
+├── format_converter.py       # Converts raw CSV to clean final format
+├── alibaba_rfq_raw.csv       # (Sample) Raw scraped data
+├── alibaba_rfq_formatted.csv # (Sample) Final cleaned CSV
+├── requirements.txt          # Python dependencies
+└── README.md                 # This file
 ```
-
-3. **Run the scraper**:
-
-```bash
-python alibaba_scraper.py
-```
-
-> ⚠️ Make sure you have Google Chrome and ChromeDriver installed. The script uses Selenium with Chrome in headless mode.
-
----
-
-## 📝 Output
-
-The data will be saved in the `output/` folder as a timestamped `.csv` file like:
-
-```
-alibaba_rfq_formatted_2025-08-05_121030.csv
-```
-
-Each row contains:
-
-* Company Name
-* Contact Info
-* Description
-* Location
 
 ---
 
 ## 📸 Sample Output
 
-| Company Name | Contact Info | Description           | Location |
-| ------------ | ------------ | --------------------- | -------- |
-| XYZ Traders  | +1-800-1234  | Looking for LED bulbs | USA      |
+| Product Name    | Quantity   | Buyer Country | Date       |
+| --------------- | ---------- | ------------- | ---------- |
+| Plastic Bottles | 10,000 pcs | United States | 2025-06-12 |
+| Cotton Bags     | 5,000 pcs  | India         | 2025-06-12 |
 
+---
 
-## 🙋‍♀️ Author
+## 🧑‍💻 Author
 
-**Pareenita Jain**
+**Pareenita Jain
 
 
 
